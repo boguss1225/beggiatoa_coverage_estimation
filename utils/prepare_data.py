@@ -40,8 +40,8 @@ def get_datasets():
                                                       target_size=(config.image_height, config.image_width),
                                                       color_mode="rgb",
                                                       batch_size=config.BATCH_SIZE,
-                                                      seed=7,
-                                                      shuffle=True,
+                                                      seed=1,
+                                                      shuffle=False,
                                                       class_mode="categorical"
                                                       )
 
