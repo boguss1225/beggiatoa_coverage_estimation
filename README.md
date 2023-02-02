@@ -1,6 +1,6 @@
 # Beggiatoa Coverage Estimation
 ## INTRODUCTION
-![](screenshots/DenseNet121_11cls_cls6.png) </br>
+![](screenshots/DenseNet121_11cls_cls6_stat.png) </br>
 ⬆ Figure 1. coverage estimation result of DenseNet121 </br>
 <p align='justify'>Beggiatoa is a bacterium that is also an anoxic and polluted environment with percentage coverage in the benthic area beneath pens used in some regions for compliance monitoring [1]. In order to do this, it is first necessary to score images or video beneath pens based on the appearance and cover of different types of Beggiatoa [2]. To automate the process, image classification with patch-base inference &amp; training algorithm is used. </p>
 
