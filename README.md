@@ -18,6 +18,10 @@ The target classes are **6 classes** like following picture:
 ⬆ Table 1. Data division overview </br>
 To guarantee the reliability of training and validation result, the data is divided in mutually exclusive way. </br>
 
+## TRAINING SCHEME
+![](screenshots/training_scheme.png) </br>
+⬆ Figure 6. Training scheme overview </br>
+
 # RESULT
 ## Visualized result
 <p align='justify'>The first column of the table below is the inference result of the trained model with 11 classes. The second column of the table is the final result with merged subcategorized class into corresponding classes which is the actual target result. </p>
@@ -30,7 +34,7 @@ EfficientNetB0   |![](screenshots/EfficientNetB0_11cls_11cls.png)  |  ![](screen
 EfficientNetV2B0  |![](screenshots/EfficientNetV2B0_11cls_11cls.png)  |  ![](screenshots/EfficientNetV2B0_11cls_cls6.png)
 DenseNet121    |![](screenshots/DenseNet121_11cls_11cls.png)  |  ![](screenshots/DenseNet121_11cls_cls6.png)
 
-⬆ Figure 4. Test results of coverage estimation upon the trained five models.
+⬆ Figure 5. Test results of coverage estimation upon the trained five models.
 
 ## Evaluation result class basis
 ![](screenshots/per_class_eval.png) </br>
@@ -42,16 +46,16 @@ DenseNet121    |![](screenshots/DenseNet121_11cls_11cls.png)  |  ![](screenshots
 ⬆ Table 3. Evaluation result of the best trained model on training and evaluation dataset </br>
 </br>
 ![](screenshots/Training_loss.png) </br>
-⬆ Figure 3. Training loss changes during training process of the five models</br>
+⬆ Figure 6. Training loss changes during training process of the five models</br>
  </br>
 ![](screenshots/Training_accuracy.png) </br>
-⬆ Figure 4. Training accuracy changes during training process of the five models</br>
+⬆ Figure 7. Training accuracy changes during training process of the five models</br>
  </br>
 ![](screenshots/Validation_loss.png) </br>
-⬆ Figure 5. Validation loss changes during training process of the five models</br>
+⬆ Figure 8. Validation loss changes during training process of the five models</br>
  </br>
 ![](screenshots/Validation_accuracy.png) </br>
-⬆ Figure 6. Validation accuracy changes during training process of the five models</br>
+⬆ Figure 9. Validation accuracy changes during training process of the five models</br>
  </br>
 
 ## Discussion
