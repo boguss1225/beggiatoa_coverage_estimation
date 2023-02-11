@@ -59,6 +59,8 @@ DenseNet121    |![](screenshots/DenseNet121_11cls_11cls.png)  |  ![](screenshots
  </br>
 
 ## Discussion
+* How to deal with overlapped patches?
+* How to deal with edge object?
 
 ## TO DOs
 * implementation of interface for quantitative analysis
