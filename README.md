@@ -24,6 +24,8 @@ To guarantee the reliability of training and validation result, the data is divi
 
 # RESULT
 ## Visualized result
+![](screenshots/inference_example.gif) </br>
+
 <p align='justify'>The first column of the table below is the inference result of the trained model with 11 classes. The second column of the table is the final result with merged subcategorized class into corresponding classes which is the actual target result. </p>
 
 Model| detailed classification      |  final result
