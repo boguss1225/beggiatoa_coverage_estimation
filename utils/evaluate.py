@@ -1,8 +1,9 @@
 import tensorflow as tf
+import numpy as np
 import config
+import time
 from utils.prepare_data import get_datasets
 from sklearn.metrics import classification_report
-import numpy as np
 
 
 def eval_model(new_model):
@@ -22,7 +23,15 @@ def eval_model(new_model):
 
     # Evaluate per class
     lables_array = test_generator.classes
+    # record the start time
+    start_time = time.time()
+    # inference
     predictions = new_model.predict(test_generator)
+    # record the end time
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print("[time taken for inference]",elapsed_time)
+    print("[time taken per image]", round(elapsed_time/test_num,5)," seconds")
     predictions = np.argmax(predictions, axis=1)
     
     print("[ lables_array ] ")
@@ -30,7 +39,7 @@ def eval_model(new_model):
     print("[ predictions ] ")
     print(predictions)
 
-    print(classification_report(lables_array, predictions))
+    print(classification_report(lables_array, predictions,digits=4))
 
 if __name__ == '__main__':
     # Load the model

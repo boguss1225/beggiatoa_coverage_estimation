@@ -1,5 +1,5 @@
-
 import tensorflow as tf
+from tensorflow.keras import layers
 import config
 
 if config.NUM_CLASSES == 2:
@@ -11,6 +11,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
     # TestNet
     # if model_name == "TestNet":
     #     base_model = TestNet()
+    
     # MobileNetV2
     if model_name == "MobileNetV2":
         base_model = tf.keras.applications.MobileNetV2(
@@ -25,7 +26,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
     # Xception (2017)
     if model_name == "Xception":
         base_model = tf.keras.applications.Xception(
-            include_top=True,
+            include_top=False,
             weights=load_weight,
             input_tensor=None,
             input_shape=(config.image_width,config.image_height,3),
@@ -37,7 +38,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
     # EfficientNetB0~B7 (2019)
     if model_name == "EfficientNetB0":
         base_model = tf.keras.applications.EfficientNetB0(
-            include_top=True,
+            include_top=False,
             weights=load_weight,
             input_tensor=None,
             input_shape=(config.image_width,config.image_height,3),
@@ -126,7 +127,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
     # EfficientNetV2 B0 to B3 and S, M, L (2021)
     if model_name == "EfficientNetV2B0":
         base_model = tf.keras.applications.EfficientNetV2B0(
-            include_top=True,
+            include_top=False,
             weights=load_weight,
             input_tensor=None,
             input_shape=(config.image_width,config.image_height,3),
@@ -234,7 +235,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
     # DenseNet Series (2017)
     if model_name == "DenseNet121":
         base_model = tf.keras.applications.DenseNet121(
-            include_top=True,
+            include_top=False,
             weights=load_weight,
             input_tensor=None,
             input_shape=(config.image_width,config.image_height,3),
@@ -256,7 +257,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
     
     if model_name == "DenseNet201":
         base_model = tf.keras.applications.DenseNet201(
-            include_top=True,
+            include_top=False,
             weights=load_weight,
             input_tensor=None,
             input_shape=(config.image_width,config.image_height,3),
@@ -303,7 +304,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
     # InceptionResNetV2 (2016)
     if model_name == "InceptionResNetV2":
         base_model = tf.keras.applications.InceptionResNetV2(
-            include_top=True,
+            include_top=False,
             weights=load_weight,
             input_tensor=None,
             input_shape=(config.image_width,config.image_height,3),
@@ -314,11 +315,17 @@ def pretrained_model(model_name, load_weight="imagenet"):
 
 
     x = base_model.output
-    # x = GlobalAveragePooling2D()(x)
+    x = layers.GlobalAveragePooling2D()(x)
     # add a fully-connected layer
-    x = tf.keras.layers.Dense(1000, activation='relu')(x)
+    x = layers.Dense(1024, activation='relu')(x)
+    x = layers.BatchNormalization()(x)
+    x = layers.Dropout(0.5)(x)
+    x = layers.Dense(512, activation='relu')(x)
+    x = layers.BatchNormalization()(x)
+    x = layers.Dropout(0.5)(x)
+    
     # add logistic layer (complusory for predict classes)
-    predictions = tf.keras.layers.Dense(config.NUM_CLASSES, activation=ACTIVATION)(x)
+    predictions = layers.Dense(config.NUM_CLASSES, activation=ACTIVATION)(x)
 
     # this is the model we will train
     model = tf.keras.models.Model(inputs=base_model.input, outputs=predictions)

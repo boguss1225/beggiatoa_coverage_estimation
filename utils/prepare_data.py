@@ -1,5 +1,15 @@
 import tensorflow as tf
 import config
+import cv2
+import numpy as np
+from PIL import Image
+
+def lab_preprocessing(image):
+    image = np.array(image)
+    lab_image = cv2.cvtColor(image,cv2.COLOR_RGB2Lab)
+    lab_image = (lab_image * 255).astype(np.uint8)
+    return Image.fromarray(lab_image)
+
 
 def get_datasets():
     # Preprocess the dataset
@@ -10,6 +20,7 @@ def get_datasets():
         brightness_range = (0.7,1.3),
         # rotation_range = 90
         # rescale=1.0 / 255.0
+#         preprocessing_function = lab_preprocessing,
     )
 
     train_generator = train_datagen.flow_from_directory(config.train_dir,
@@ -33,6 +44,7 @@ def get_datasets():
                                                         shuffle=True,
                                                         class_mode="categorical"
                                                         )
+    
     test_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
         # rescale=1.0 /255.0
     )
