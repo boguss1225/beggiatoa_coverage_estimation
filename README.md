@@ -66,7 +66,7 @@ DenseNet121    |![](screenshots/DenseNet121_11cls_11cls.png)  |  ![](screenshots
 
 ## TO DOs
 * implementation of interface for quantitative analysis
-* 5 fold cross validation
+* 5 fold cross validation (done 19th/Feb) -> data cleansing needed.
 * Apply Voting algorithm for more fine-edge classification
 
 ## Code base 
