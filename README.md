@@ -8,7 +8,7 @@
 The target classes are **6 classes** like following picture:
 ![](screenshots/data_annotation_original.png) </br>
 ⬆ Figure 2. original classes of given data. </br>
-<p align='justify'>However, dataset categorized into 6 classes are not capable of representing full spectrum of under water biodiversity. Because the circumstances of under water environment are varied it is hard to define the types of under water situataion into 6 types. So, in this project, I have subcategorized some of the 6 classes into more detailed 12 classes like following: </p>
+<p align='justify'>However, the dataset categorized into 6 classes are not capable of representing full spectrum of under water biodiversity. Because the circumstances of under water environment are varied and it is hard to define the types of under water situataion into strictly 6 types. So, in this project, I have subcategorized some of the 6 classes into more detailed 12 classes according to their texture feature like following: </p>
 
 ![](screenshots/data_subcategory.png)</br>
 ⬆ Figure 3. Subcategorized classes.</br>
