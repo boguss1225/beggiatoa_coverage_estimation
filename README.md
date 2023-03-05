@@ -12,7 +12,7 @@ The target classes are **6 classes** like following picture:
 
 ![](screenshots/data_subcategory.png)</br>
 ⬆ Figure 3. Subcategorized classes.</br>
-<p align='justify'>When you see Figure 3 background section, the instances are homogeneous in their appearance and image feature. Including those homogeneous images in the same class impedes DNN model training results. Therefore, it is reasonable to seperate those into subcategorized class so that it can be trained as if different class. But don't worry, they will be merged into original class in the inference stage.</p> </br>
+<p align='justify'>When you see Figure 3 - type 3 and background classes, the instances are homogeneous in their appearance and image feature. Including those homogeneous images in the same class impedes DNN model training results. Therefore, it is reasonable to seperate those into subcategorized class so that it can be trained as if different class. But don't worry, they will be merged into original class in the inference stage.</p> </br>
 
 ![](screenshots/data_division.png) </br>
 ⬆ Table 1. Data division overview </br>
