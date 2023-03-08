@@ -41,7 +41,7 @@ DenseNet121    |![](screenshots/DenseNet121_11cls_11cls.png)  |  ![](screenshots
 ## Evaluation result class basis
 ![](screenshots/per_class_eval.png) </br>
 ⬆ Table 2. Evaluation result of trained models on validation dataset </br>
-<p align='justify'>As you can see from the Table 2, morphologically obvious classes such as 6_number and 5_big_worm have shown high accuracy in all model. On the other hand, 2_pathcy,3_thick and 3_thin which are ambiguous and hard to be distinguished classes have shown relatively low accuracy score.</p>
+<p align='justify'>As you can see from the Table 2, morphologically obvious classes such as 6_number and 5_big_worm have shown high accuracy in all model. On the other hand, 2_pathcy, 3_thick and 3_thin which are ambiguous and hard to be distinguished classes have shown relatively low accuracy score.</p>
 
 ## Training Process
 ![](screenshots/evaluation.png) </br>
