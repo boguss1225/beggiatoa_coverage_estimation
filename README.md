@@ -67,7 +67,7 @@ DenseNet121    |![](screenshots/DenseNet121_11cls_11cls.png)  |  ![](screenshots
 ## TO DOs
 * implementation of interface for quantitative analysis
 * 5 fold cross validation (done 19th/Feb) -> data cleansing needed. (done 23/Feb)
-* Apply Voting algorithm for more fine-edge classification
+* Apply Voting algorithm for more fine-edge classification (done)
 
 ## Code base 
 https://github.com/boguss1225/classification-patch-base
